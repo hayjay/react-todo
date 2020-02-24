@@ -45,7 +45,9 @@ export class TodoItem extends Component {
 TodoItem.propTypes = {
     //this PropTypes is an object not array because this class represents a partical single todo item
 
-    // todos : PropTypes.object.isRequired
+    todos : PropTypes.object.isRequired,
+    updateTask : PropTypes.func.isRequired,
+    deleteTodo : PropTypes.func.isRequired
 }
 
 const btnStyle = {
