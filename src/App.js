@@ -11,12 +11,16 @@ import axios from 'axios'
 
 class App extends Component {
   state = {
-    todos : []
+    todos : [],
+    loading : false
   }
 
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
-    .then(res => this.setState({todos : res.data}));
+    setTimeout(() => { 
+      this.setState({loading: false})
+    },5000)
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=150')
+    .then(res => this.setState({todos : res.data, loading : false}));
   }
 
   //TOGGLE COMPLETE
